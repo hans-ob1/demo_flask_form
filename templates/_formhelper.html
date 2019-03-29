@@ -1,0 +1,13 @@
+<!-- Form Template -->
+{% macro render_formfield(field) %}
+<div class="mb-3">
+    {{ field.label }}
+    {{ field(**kwargs) | safe}}
+
+    {% if field.errors %}
+        <div class="invalid-feedback">
+            {{error}}
+        </div>        
+    {% endif %}
+</div>
+{% endmacro %}

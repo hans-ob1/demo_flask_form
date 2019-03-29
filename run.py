@@ -8,6 +8,7 @@ from flask import Flask,\
 
 from flask_recaptcha import ReCaptcha
 from functools import wraps
+ 
 
 import gc
 import os
@@ -26,6 +27,7 @@ app.config.update(
 @app.route('/', methods = ['GET','POST'])
 def main():
     try:
+
         return render_template("form.html")
     except Exception as e:
         return str(e)
